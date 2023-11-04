@@ -1,0 +1,12 @@
+import 'package:food_delivery/data/api/api_client.dart';
+import 'package:food_delivery/utils/app_constants.dart';
+import 'package:get/get.dart';
+
+class RecommendedProductrepo extends GetxService {
+  final ApiClient apiClient;
+  RecommendedProductrepo({required this.apiClient});
+  Future<Response> getRecommendedProductList() async {
+   // print("Recommended  Productrepo");
+    return await apiClient.getData(AppConstants.RECOMMENDED_PRODUCT_URL);
+  }
+}
